@@ -47,18 +47,22 @@ class _HomeState extends ConsumerState<Home> with SingleTickerProviderStateMixin
           labelPadding: const EdgeInsets.symmetric(horizontal: 3),
           overlayColor: const MaterialStatePropertyAll(Colors.transparent),
           indicatorColor: Colors.transparent,
+
           tabAlignment: TabAlignment.center,
-          tabs: ref.watch(tabsProvider).map((tab) {
-            // final index = ref.watch(tabsProvider).indexOf(tab);
-            final index = ref.watch(tabsProvider.select((value) => value.indexOf(tab)));
-            return CustomTab(
-              index: index,
-              // tabModel: ref.watch(tabsProvider)[index],
-              tabModel: ref.watch(
-                tabsProvider.select((value) => value[index]),
-              ),
-            );
-          }).toList(),
+          tabs: [
+
+          ],
+          // tabs: ref.watch(tabsProvider).map((tab) {
+          //   // final index = ref.watch(tabsProvider).indexOf(tab);
+          //   final index = ref.watch(tabsProvider.select((value) => value.indexOf(tab)));
+          //   return CustomTab(
+          //     index: index,
+          //     // tabModel: ref.watch(tabsProvider)[index],
+          //     tabModel: ref.watch(
+          //       tabsProvider.select((value) => value[index]),
+          //     ),
+          //   );
+          // }).toList(),
         ),
         body: Column(
           children: [

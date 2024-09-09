@@ -18,7 +18,7 @@ class Tabs extends _$Tabs {
   void changeFocus(int index) {
     int previousIndex = state.indexWhere((e) => e.hasFocus);
     state[previousIndex] = state[previousIndex].copyWith(hasFocus: false);
-    state = state.map((e) => e.copyWith(hasFocus: false)).toList();
+    // state = state.map((e) => e.copyWith(hasFocus: false)).toList();
     state[index] = state[index].copyWith(hasFocus: true);
   }
 }
